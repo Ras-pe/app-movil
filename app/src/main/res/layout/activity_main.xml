@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/chat_background"
+    tools:context=".MainActivity">
+
+    <!-- Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="102dp"
+        android:background="@color/surface"
+        app:navigationIcon="@drawable/outline_folder_open_24"
+        app:navigationIconTint="@color/primary"
+        app:title="AI Chat"
+        app:titleTextAppearance="@style/TextAppearance.Material3.TitleMedium"
+        app:titleTextColor="@color/on_surface" />
+
+    <!-- Chat messages -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/messages"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:fadeScrollbars="false"
+        android:scrollbars="vertical"
+        app:reverseLayout="true"
+        tools:listitem="@layout/item_message_assistant" />
+
+    <!-- Input bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="12dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="12dp"
+        android:background="@color/surface">
+
+        <EditText
+            android:id="@+id/user_input"
+            android:layout_width="305dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_input_bar"
+            android:enabled="false"
+            android:fontFamily="sans-serif"
+            android:hint="Primero selecciona un modelo GGUF"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
+            android:maxLines="4"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="12dp"
+            android:textColor="@color/input_text"
+            android:textColorHint="@color/input_hint"
+            android:textSize="15sp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:enabled="true"
+            android:src="@drawable/outline_folder_open_24"
+            app:backgroundTint="@color/primary"
+            app:tint="@color/on_primary"
+            app:fabSize="mini"
+            app:shapeAppearanceOverlay="@style/FabShape" />
+    </LinearLayout>
+
+</LinearLayout>
