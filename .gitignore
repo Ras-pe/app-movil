@@ -31,3 +31,6 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+# GGUF model files (too large for git)
+*.gguf
